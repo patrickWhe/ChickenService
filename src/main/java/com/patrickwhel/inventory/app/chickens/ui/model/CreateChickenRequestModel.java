@@ -10,7 +10,7 @@ public class CreateChickenRequestModel {
 private String firstName;
 
 @NotNull(message = "Last name cannot be empty")
-@Size(min = 2, message = "Last name must have at least 2 charactors")
+@Size(min = 2, message = "The ast name must have at least 2 charactors")
 private String LastName;
 
 @NotNull(message = "Type cannot be empty")

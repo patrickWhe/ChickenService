@@ -83,6 +83,14 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			
+			<dependency>
+  <groupId>org.jenkins-ci.plugins</groupId>
+  <artifactId>pipeline-utility-steps</artifactId>
+  <version>1.5.1</version>
+  <scope>test</scope>
+</dependency>
+
 		</dependencies>
 		
 	</dependencyManagement>
@@ -101,5 +109,22 @@
 </plugin>
 		</plugins>
 	</build>
+	
+	<reporting>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.1.2</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+      </plugins>
+    </reporting>
 
 </project>
