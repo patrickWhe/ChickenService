@@ -51,7 +51,7 @@ public class ChickenEntity implements Serializable {
 		return chickenId;
 	}
 	public void setChickenId(String chickenId) {
-		this.chickenId = chickenId;
+		this.chickenId = chickenI;
 	}
 
 	
