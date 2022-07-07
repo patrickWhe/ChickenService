@@ -30,6 +30,11 @@ jobs:
         run: mvn -B clean package -DskipTests
       - name: Maven Verify
         run: mvn -B clean verify -Pintegration-test
+      - name:  Deploy to GitHub Pages
+        uses: patrickWhe/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: packages/examples/build/
         
 
   sonar:
