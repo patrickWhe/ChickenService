@@ -99,8 +99,8 @@
   
   <repository>
     <id>github</id>
-    <name>NoticeBoard Simple CRUD application</name>
-    <url>https://maven.pkg.github.com/patrickWhe/NoticeBoard</url> 
+    <name>Chickenapp Simple CRUD application</name>
+    <url>https://maven.pkg.github.com/patrickWhe/ChickenService</url> 
   </repository>
 </distributionManagement>
 	
