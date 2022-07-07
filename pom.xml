@@ -100,7 +100,7 @@
   <repository>
     <id>github</id>
     <name>NoticeBoard Simple CRUD application</name>
-    <url>https://maven.pkg.github.com/wkrzywiec/NoticeBoard</url> 
+    <url>https://maven.pkg.github.com/patrickWhe/NoticeBoard</url> 
   </repository>
 </distributionManagement>
 	
