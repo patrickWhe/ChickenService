@@ -129,6 +129,10 @@
 	
 	<profiles>
 	<profile>
+		<properties>
+  <sonar.organization>hellodandy19</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
 		<id>integration-test</id>
 		<build>
 			<plugins>
