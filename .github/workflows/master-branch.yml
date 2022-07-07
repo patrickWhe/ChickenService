@@ -24,8 +24,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install dependencies
         run: yarn install
-      - name: Build main package
-        run: yarn run build
       - name: Maven Package
         run: mvn -B clean package -DskipTests
       - name: Maven Verify
