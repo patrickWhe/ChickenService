@@ -23,7 +23,7 @@ public class TestChickenApp extends InventoryAppChickensApplication.tests {
 	public void testChicken() throws Exception {
 		mockMvc.perform(get("/chicken")).andExpect(status().isOk())
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
-				.andExpect(jsonPath("$.name"))
+				.andExpect(jsonPath("$.name")):
 			
 	}
 
