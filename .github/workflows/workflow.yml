@@ -20,8 +20,30 @@ jobs:
           distribution: 'adopt'
       - name: Maven Verify
         run: mvn clean verify
-      - name: Maven Sonar Code Coverage
-        run: mvn sonar:sonar -Dsonar.projectKey=springboot-cicd -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+ 
+  sonarcloud:
+    name: Build (Sonar Cloud)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '15'
+
+    - name: Node install dependencies
+      run: npm install
+
+    - name: Run unit tests
+      run: npm run test
+
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
   build:
     name: Build
