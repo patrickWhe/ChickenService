@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: mvn package -DskipTests
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: jar-file
+          path: target/github-actions-example-1.0.0.jar
+
+  unit-test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: mvn test
