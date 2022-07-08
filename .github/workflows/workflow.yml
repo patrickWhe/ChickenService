@@ -68,7 +68,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        push: tru
+        push: true
         tags: user/images:tag
 
 
