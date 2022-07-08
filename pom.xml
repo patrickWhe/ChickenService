@@ -139,7 +139,7 @@
 	
 	<profiles>
 	<profile>
-		<properties>
+	<properties>
   <sonar.organization>hellodandy19</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 </properties>
