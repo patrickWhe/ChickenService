@@ -24,6 +24,7 @@ jobs:
  run_test:
     name: Unit Test
     runs-on: ubuntu-18.04
+    needs: [build]
     steps:
       - run: echo "Starting execute unit test"
       - uses: actions/checkout@v3
@@ -38,6 +39,7 @@ jobs:
  sonar_analysis:
     name: SonarCloud analysis
     runs-on: ubuntu-18.04
+    needs: [run_test]
     steps:
       - uses: actions/checkout@v2
         with:
