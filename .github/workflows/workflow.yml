@@ -36,6 +36,8 @@ jobs:
           distribution: 'adopt'
       - name: Maven Verify
         run: mvn clean verify 
+      - name: Test with Maven
+        run: mvn -B test --file pom.xml
         
  sonar_analysis:
     name: SonarCloud analysis
