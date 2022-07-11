@@ -1,11 +1,12 @@
 name: CI/CD Pipeline
 
 on:
+  #Manually trigger workflow runs
+  workflow_dispatch:
+  #Trigger the workflow on push from the main branch
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+    branches:
+      - main
 jobs:
         
  build:
@@ -16,11 +17,9 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'adopt'
-      - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots package
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Maven Package
+        run: mvn -B clean package -DskipTests
+
  
  run_test:
     name: Unit Test
