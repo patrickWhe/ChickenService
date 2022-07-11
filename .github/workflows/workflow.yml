@@ -1,12 +1,11 @@
 name: CI/CD Pipeline
 
 on:
-  #Manually trigger workflow runs
   workflow_dispatch:
-  #Trigger the workflow on push from the main branch
   push:
     branches:
       - main
+
 jobs:
         
  build:
@@ -19,6 +18,8 @@ jobs:
           java-version: '11'
       - name: Maven Package
         run: mvn -B clean package -DskipTests
+      - name: Maven Verify
+        run: mvn -B clean verify
 
  
  run_test:
