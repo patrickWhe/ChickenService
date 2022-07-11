@@ -16,7 +16,7 @@ public class ChickenEntity implements Serializable {
 	@Id
 	@GeneratedValue
 	private long id;
-	private String firstName;
+	private String firstNam;
 	private String LastName;
 	private String chickenType;
 	private String chickenId;
