@@ -24,7 +24,7 @@ public class ChickenEntity implements Serializable {
 	
 	
 	public long getId() {
-		return id;
+		return id
 	}
 	public void setId(long id) {
 		this.id = id;
