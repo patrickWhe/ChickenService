@@ -24,6 +24,8 @@ jobs:
         run: mvn clean verify 
       - name: Test with Maven
         run: mvn -B test --file pom.xml
+      - name: Test
+        run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
         
  sonar_analysis:
     name: SonarCloud analysis
